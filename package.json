@@ -1,0 +1,14 @@
+{
+  "name": "javascript-algorithms-practice",
+  "version": "1.0.0",
+  "description": "Javascript Alogorithm Practice",
+  "main": "string-reversal.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.0.1"
+  }
+}
