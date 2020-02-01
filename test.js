@@ -6,6 +6,12 @@ const reverse_integer = require('./algorithms/integer-reversal');
 const fizzbuzz = require('./algorithms/fizzbuzz');
 const maxCharacter = require('./algorithms/max-character');
 const anagram = require('./algorithms/anagram');
+const countVowel = require('./algorithms/count-vowel');
+const arrayChunk = require('./algorithms/array-chunk');
+const reverseArray = require('./algorithms/reverse-array');
+const capitalize = require('./algorithms/capitalize');
+const equalToSum = require('./algorithms/equalto_sum');
+const caesarCipher = require('./algorithms/caesar-cipher');
 
 
 // String Reversal
@@ -78,3 +84,51 @@ describe('Anagrams checking', () => {
         });
     });
 });
+
+// Count vowels
+describe('Vowels', () => {
+    it("Should count vowels", () => {
+        assert.equal(countVowel("Hello world"),3);
+    });
+});
+
+//Array chunks
+describe("Array Chunking", () => {
+    it("Should implement array chunking", () => {
+        assert.deepEqual(arrayChunk([1, 2, 3, 4], 2), [[1, 2], [3, 4]]);
+		assert.deepEqual(arrayChunk([1, 2, 3, 4], 3), [[1, 2, 3], [4]]);
+		assert.deepEqual(arrayChunk([1, 2, 3, 4], 5), [[1, 2, 3, 4]]);
+    });
+});
+
+// Reverse Array
+describe("Array reverse", () => {
+    it("Should reverse array", () => {
+        assert.deepEqual(reverseArray([1, 2 ,3 ,4 ]),[4, 3, 2, 1])
+        assert.deepEqual(reverseArray([1, 2 ,3 ,4 ,5]),[5, 4, 3, 2, 1]);
+    });
+})
+
+// Capitalize every word
+describe("Capitalize every word", () => {
+    it("Should capitalize word", () => {
+      assert.equal(capitalize("hello world!"),"Hello World!");
+    });
+});
+
+// Equal to given Sum
+describe("Equal to given Sum", () => {
+    it("Should implement two sum", () => {
+        assert.deepEqual(equalToSum([1,2,2,3,4],4),[[2,2],[3,1]])
+    });
+});
+
+// Caesar Cipher
+describe("Caesar Cipher", () => {
+    it("Should shift to the right", () => {
+     assert.equal(caesarCipher("I love JavaScript!", 100), "E hkra FwrwOynelp!");
+    });
+   it("Should shift to the left", () => {
+     assert.equal(caesarCipher("I love JavaScript!", -100), "M pszi NezeWgvmtx!");
+    });
+   });
