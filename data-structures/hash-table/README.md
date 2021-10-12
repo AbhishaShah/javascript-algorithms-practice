@@ -4,7 +4,7 @@
 - In Object keys can only be string but in Maps keys can be number, string, symbol, array or function.
 - A hash collision occurs when a hash algorithm produces the same hash value for two different input values.(Different input and same output)
 
-### **Array Time Complexities**
+### **Hash Table Time Complexities**
     Get: O(1)
 
     Search: O(1)  => if hash collision occur then it become O(n) as we need to loop through for particular value.
