@@ -21,7 +21,7 @@ Output: [0,1]
 
 ## Complexity
 
-- **Time:** `O(n)` : We are only visiting element only once
+- **Time:** `O(n)` : As the whole array is needed to be traversed only once.
 - **Space:** `O(n)` : We are using map to store data
 
 ## References

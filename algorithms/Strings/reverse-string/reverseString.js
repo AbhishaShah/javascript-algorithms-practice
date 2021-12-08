@@ -1,3 +1,7 @@
+/* Create a function that reverse a string:
+    Input: 'Hi My name is Abhisha' 
+    Output: 'ahsihbA si eman yM iH'
+*/
 
 // This is one way to solve, but we should avoid as it contains lots of code and we can simplify by using built in method of array 
 function reverse(str){

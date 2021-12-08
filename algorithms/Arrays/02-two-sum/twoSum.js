@@ -1,3 +1,7 @@
+/* Check if given array has 2 elements whose sum is equal to the given value
+    Input: nums = [2,7,11,15], target = 9
+    Output: [0,1]
+*/
 
 /**
  * @param {number[]} nums
@@ -36,10 +40,10 @@ var twoSum = function(nums, target) {
     
     for(let i = 0; i< numLen; i++){
         let currValue = nums[i];
-        if(compMap.has(currValue)) {
-            return [compMap.get(currValue), i];
+        if(compMap.has(currValue)) { // check if compliment already in map 
+            return [compMap.get(currValue), i]; // yes, return complement's value and current index
         }
-            compMap.set([target-currValue], i);
+            compMap.set([target-currValue], i); // store compliment as key and current index as value
     }
 
     return []; // if not find the indices then return empty array
