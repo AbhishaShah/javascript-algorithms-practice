@@ -1,5 +1,5 @@
 /* 
-    Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+    Find the first non-repeating character in it and return its index. If it does not exist, return -1.
     
     Example 1:
         Input: s = "loveleetcode"
@@ -24,10 +24,10 @@ const firstUniqChar = s => {
                uniqueCharacters.set(s[i],i);  // storing character with its index
             }
         }
-        let firstUniqIndex = -1;
+        let firstUniqIndex = -1; // initilize to -1 for edge case when all characters are repetaing then default it will return -1
         for (let index of uniqueCharacters.values()) {
             if(index !== -1){
-                firstUniqIndex = index;
+                firstUniqIndex = index; // the first value which is not -1 is non-repeating character's index
                 break;
             }
         }
@@ -36,8 +36,8 @@ const firstUniqChar = s => {
     }
     
 };
-
+console.log(firstUniqChar('loveleetcode')); // 2
 console.log(firstUniqChar('aabb')); // -1
 
 // Time complexity: O(n)
-// Space complexity: O(1)
+// Space complexity: O(n)
