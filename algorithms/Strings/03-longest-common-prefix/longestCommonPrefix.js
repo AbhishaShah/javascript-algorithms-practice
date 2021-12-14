@@ -9,14 +9,23 @@
     Output: ""
 */
 
-const longestCommonPrefix = strs => {
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+ const longestCommonPrefix = strs => {
+    
+    let strsLen = strs.length;
     let longestCommonPrefix = '';
-    if(strs === null || strs.length === 0){
+    
+    if(strs === null || strsLen === 0){
         return longestCommonPrefix;
     }
+    if(strsLen === 1) return strs[0];
+    
     // first find minimum length of string (because common characters cannot be more than the length of the shortest string of all the given strings.)
     let minLength = strs[0].length;
-    for (let i = 1; i < strs.length; i++) {
+    for (let i = 1; i < strsLen; i++) {
         minLength = Math.min(minLength, strs[i].length);
     }
 
@@ -24,7 +33,7 @@ const longestCommonPrefix = strs => {
     for (let i = 0; i < minLength; i++) {
         let current = strs[0][i]; 
         
-        for (let j = 1; j < strs.length; j++) {
+        for (let j = 1; j < strsLen; j++) {
             if(current !== strs[j][i]){
                 return longestCommonPrefix;           
              }         
