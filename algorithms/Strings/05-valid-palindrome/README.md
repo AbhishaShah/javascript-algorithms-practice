@@ -6,8 +6,8 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 
 ## Examples
 Input: s = "race a car"
-Output: true
-Explanation: "racaecar" is a palindrome.
+Output: false
+Explanation: "raceacar" is a palindrome.
 
 
 ## Approach 

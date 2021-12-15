@@ -37,10 +37,11 @@ class DoublyLinkedList {
         return newNode;
     }
     
-    // add utem to the start of list
+    // add item to the start of list
     prepend(value){
         const newNode = new Node(value);
         newNode.next = this.head; // new node's next point to the head
+        this.head.previous = newNode;
         this.head = newNode; // set new node as head now
         this.head.previous = null;
         this.length++;
@@ -65,25 +66,25 @@ class DoublyLinkedList {
         }
         const newNode = new Node(value);
 
-        const prevNode = this.traverseNode(index-1);
-        const afterNode = prevNode.next;
+        const leader = this.traverseNode(index-1);
+        const follower = prevNode.next;
 
-        prevNode.next = newNode;
-        newNode.next = afterNode;
-        newNode.previous = prevNode;
-        afterNode.previous = newNode;
+        leader.next = newNode;
+        newNode.next = follower;
+        newNode.previous = leader;
+        follower.previous = newNode;
         this.length++;
         return newNode;
     }
 
     // delete item at given index
     delete(index){
-        const prevNode = this.traverseNode(index-1);
-        const currentNode = prevNode.next;
-        const afterNode =  currentNode.next;
+        const leader = this.traverseNode(index-1);
+        const currentNode = leader.next;
+        const follower =  follower.next;
        
-        afterNode.previous = prevNode;
-        prevNode.next = afterNode; 
+        follower.previous = leader;
+        leader.next = follower; 
         this.length--;
         return currentNode; // js remove garbage collection which is unpointed node automatically got deleted
     }

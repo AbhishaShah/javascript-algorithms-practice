@@ -34,7 +34,7 @@ class LinkedList {
         return newNode;
     }
     
-    // add utem to the start of list
+    // add item to the start of list
     prepend(value){
         const newNode = new Node(value);
         newNode.next = this.head; // new node's next point to the head
@@ -55,6 +55,13 @@ class LinkedList {
 
     //insert item at given index
     insert(index, value){
+        // check param
+        if(index >= this.length || index === this.length - 1){
+            return this.append(value);
+        }
+        if(index === 0){
+            this.prepend(value);
+        }
         const newNode = new Node(value);
 
         const prevNode = this.traverseNode(index-1);
